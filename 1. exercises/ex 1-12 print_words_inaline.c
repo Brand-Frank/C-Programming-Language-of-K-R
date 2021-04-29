@@ -14,7 +14,7 @@ main() {
 				state = OUT;
 			}
 		}
-		else if (state == OUT) {
+		else if (state == OUT) {	/*	每个单词的首字母	*/
 			state = IN;
 			putchar(c);
 		}
@@ -22,3 +22,10 @@ main() {
 			putchar(c);
 	}
 }
+
+/*	test:input()
+*	"abc"
+*	"abc def gehi"
+*	"  abc def ghi"
+*	"  abc def ghi "
+*/
