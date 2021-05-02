@@ -1,5 +1,5 @@
 ﻿/*	打印输入单词的长度的直方图 - 竖直方向	*/
-
+//#include<Windows.h>		/*	下边的IN,OUT,MAXWORD会被重定义	*/
 #include<stdio.h>
 #define MAXHIST 15
 #define MAXWORD 11
@@ -12,6 +12,8 @@ int main() {
 	int maxvalue;		/*	maxium value for wl[]	*/
 	int overflow;		/*	number of overflow words*/
 	int wl[MAXWORD];	/*	word length counters	*/
+
+	//int test;
 
 	state = OUT;
 	nc = 0;				/*	number of chars in a word	*/
@@ -39,7 +41,7 @@ int main() {
 		else
 			++nc;		/*	inside a word	*/
 	}
-
+	
 	maxvalue = 0;
 	for (i = 1; i < MAXWORD; ++i) {
 		if (wl[i] > maxvalue)
@@ -48,8 +50,11 @@ int main() {
 	
 	for (i = MAXHIST; i > 0; --i) {		/*	限制最高处为　MAXHIST＝15	*/
 		for (j = 1; j < MAXWORD; ++j) {
-			if (wl[j] * MAXHIST / maxvalue >= i)
+			//test = wl[j] * MAXHIST / maxvalue;
+			if (wl[j] * MAXHIST / maxvalue >= i) {
+				Sleep(30);		/*	<windows.h>	*/
 				printf(" # ");
+			}
 			else
 				printf("   ");
 		}
