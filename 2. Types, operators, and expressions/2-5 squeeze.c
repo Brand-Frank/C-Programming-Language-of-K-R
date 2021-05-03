@@ -5,8 +5,10 @@ void squeeze(char s[], int c);
 main() {
 	//char s[5] = "Acsda";
 	char s[5] = { 'A','c','s','w','a' };
-	int c = 's';
+	int c = 'b';		/*	´ýÉ¾³ýµÄ×Ö·û´®	*/
+
 	squeeze(s, c);
+	
 	for(int i=0;i<5;++i)
 		printf("%c", s[i]);
 }
